@@ -23,6 +23,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  //This comment is extremely important to detect a change in this file
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
