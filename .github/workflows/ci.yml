@@ -24,9 +24,7 @@ jobs:
       - name: Cache Next.js build and lint output
         uses: actions/cache@v3
         with:
-          path: |
-            ~/.yarn
-            /.next/cache
+          path: ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: |
               ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
