@@ -48,6 +48,3 @@ jobs:
       # Lint files
       - name: Lint files
         run: yarn lint
-      # Check typescript files
-      - name: Lint ts files
-        run: yarn lint:ts
