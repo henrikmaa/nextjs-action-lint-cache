@@ -21,14 +21,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: 'yarn'
-      - name: Cache Next.js build and lint output
-        uses: actions/cache@v4
-        with:
-          path: |
-            .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          restore-keys: |
-              ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
       - name: Install dependencies
         run: yarn install
   # Lint job
@@ -43,6 +35,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: "yarn"
+      - name: Cache Next.js build and lint output
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
       - run: yarn install
       # Lint files
       - name: Lint files
