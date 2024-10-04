@@ -22,7 +22,7 @@ jobs:
         with:
           cache: 'yarn'
       - name: Cache Next.js build and lint output
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             .next/cache
