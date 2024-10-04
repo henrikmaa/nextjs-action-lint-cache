@@ -1,5 +1,8 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import ComponentOne from "@/app/ComponentOne";
+import ComponentThree from "@/app/ComponentThree";
+import ComponentTwo from "@/app/ComponentTwo";
 
 export default function Home() {
   return (
@@ -89,6 +92,9 @@ export default function Home() {
           />
           Go to nextjs.org →
         </a>
+        <ComponentOne />
+        <ComponentTwo />
+        <ComponentThree />
       </footer>
     </div>
   );
